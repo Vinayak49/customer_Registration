@@ -13,7 +13,7 @@ if (session.getAttribute("name")==null){
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Search Result</title>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>

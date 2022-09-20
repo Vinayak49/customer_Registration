@@ -197,7 +197,7 @@ public class UserObjects {
 		UserObjects userObjects = new UserObjects();
 		Connection connection = userObjects.getDbConnection();
 		
-		PreparedStatement preparedStatement = connection.prepareStatement("select partyId,firstName,lastName,address,city,zip,state,country,phone,password from party where firstName = ? and lastName= ?");
+		PreparedStatement preparedStatement = connection.prepareStatement("select partyId,firstName,lastName,address,city,zip,state,country,phone,password from party where firstName like ? and lastName like ?");
 		
 		preparedStatement.setString(1, firstName);
 		preparedStatement.setString(2, lastName);

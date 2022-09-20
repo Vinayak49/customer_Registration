@@ -8,6 +8,8 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<input type="hidden" id="status" value = "<%= request.getAttribute("status") %>" >
+
 <section class="h-100 h-custom" >
   <div class="mt-2">
     <div class="row d-flex justify-content-center align-items-center h-20">
@@ -40,6 +42,15 @@
     </div>
   </div>
 </section>
+
+<script type="text/javascript">
+	var status = document.getElementById("status").value;
+	if (status == "failed"){
+		swal("Congrats","Logged in","success")
+	}
+
+	
+</script>
 
 <jsp:include page="footer.jsp"></jsp:include>
 </body>

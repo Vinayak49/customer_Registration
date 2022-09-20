@@ -9,6 +9,8 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 
+<input type="hidden" id="status" value = "<%= request.getAttribute("status") %>" >
+
 <section class="h-100 h-custom" >
   <div class="mt-2">
     <div class="row d-flex justify-content-center align-items-center h-20">
@@ -19,11 +21,11 @@
             <form class="px-md-2" action="SignUp" method="post">
 				<div class="form-row">
 	              <div class="form-outline mb-1 col-md-6">
-	                <label class="form-label" for="form3Example1q">First Name</label>
+	                <label class="form-label required" for="form3Example1q">First Name</label>
 	                <input type="text" name="fname" id="form3Example1q" class="form-control" />
 	              </div>
 	              <div class="form-outline mb-1 col-md-6">
-	                <label class="form-label" for="form3Example1q">Last Name</label>
+	                <label class="form-label required" for="form3Example1q">Last Name</label>
 	                <input type="text" name="lname" id="form3Example1q" class="form-control" />
 	              </div>
 				</div>
@@ -77,6 +79,21 @@
     </div>
   </div>
 </section>
+
+<style>
+  .required:after {
+    content:" *";
+    color: red;
+  }
+</style>
+
+<script type="text/javascript">
+	var status = document.getElementById("status").value;
+	if (status == "success"){
+		swal("Congrats","Account Created","success")
+	}
+	
+</script>
 
 	<jsp:include page="footer.jsp"></jsp:include>
 

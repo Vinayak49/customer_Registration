@@ -33,10 +33,12 @@ while(rs.next()){
   <div class="card-body bg-secondary">
     <h4><p class="card-text"> Address: <%=rs.getString(4)%> City: <%=rs.getString(5)%> Zip: <%=rs.getString(6)%> State: <%=rs.getString(7)%> Country: <%=rs.getString(8)%> Phone: <%=rs.getString(9)%> Password: <%=rs.getString(10)%></p></h4>
     <a href="allrecords.jsp?PartyId=<%=rs.getString(1)%>" class="btn btn-success">Update</a>
-        <a href="delete?PartyId=<%=rs.getString(1)%>" class="btn btn-danger">Delete</a>
+        <a href="delete?PartyId=<%=rs.getString(1)%>"onclick="return check()"  class="btn btn-danger">Delete</a>
   </div>
 
 </div>
+
+
 <%
 }
 %>
@@ -69,5 +71,15 @@ Password: <input type= "password" name="password" value="<%=rs1.getString(10)%>"
     }
 	
     %>
+<script type="text/javascript">
+	function check(){
+		
+	var a = confirm("Do you really want to Delete this record ");
+	return a;
+	}
+
+
+</script>
+    
 </body>
 </html>

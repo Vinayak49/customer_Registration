@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.hotwax.model.UserObjects;
 
-/**
- * Servlet implementation class DeleteUser
- */
 @WebServlet("/delete")
 public class DeleteUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -22,6 +19,7 @@ public class DeleteUser extends HttpServlet {
 		UserObjects userObjects = new UserObjects();
 		
 		try {
+			
 			boolean b=userObjects.deleteRecord(pid);
 			if (b==true){
 				response.sendRedirect("allrecords.jsp");
